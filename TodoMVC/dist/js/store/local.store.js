@@ -27,7 +27,7 @@ var LocalStore = function () {
 
             var data = _getStoreData();
             var ix = data.todos.findIndex(function (t) {
-                return t.id === id;
+                return t.id === parseInt(id);
             });
             var todo = data.todos.splice(ix, 1)[0];
             _setStoreData(data);

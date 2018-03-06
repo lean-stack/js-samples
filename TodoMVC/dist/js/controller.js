@@ -18,7 +18,7 @@ var Controller = function Controller(state) {
         var $li = ev.target.closest('[data-id]');
 
         if (ev.target.classList.contains('destroy')) {
-            state.deleteTodo(parseInt($li.getAttribute('data-id')));
+            state.deleteTodo($li.getAttribute('data-id'));
         }
     });
 
@@ -26,7 +26,7 @@ var Controller = function Controller(state) {
         var $li = ev.target.closest('[data-id]');
 
         if (ev.target.classList.contains('toggle')) {
-            state.updateTodo(parseInt($li.getAttribute('data-id')), { completed: ev.target.checked });
+            state.updateTodo($li.getAttribute('data-id'), { completed: ev.target.checked });
         }
     });
 };

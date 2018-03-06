@@ -22,7 +22,7 @@ export default class LocalStore {
         eventbus.subscribe('store.delete', (id) => {
 
             const data = _getStoreData();
-            const ix = data.todos.findIndex( t => t.id === id);
+            const ix = data.todos.findIndex( t => t.id === parseInt(id));
             const todo = data.todos.splice(ix,1)[0];
             _setStoreData(data);
             eventbus.publish('todo.deleted', todo);

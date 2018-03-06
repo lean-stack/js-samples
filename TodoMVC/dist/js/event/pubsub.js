@@ -1,6 +1,9 @@
+// See https://gist.github.com/learncodeacademy/777349747d8382bfb722
 
 var factory = function factory() {
     var subscribers = new Map();
+
+    console.log("EventBus Factory");
 
     var subscribe = function subscribe(eventname, fn) {
         if (!subscribers.has(eventname)) subscribers.set(eventname, new Set());

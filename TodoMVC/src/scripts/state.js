@@ -43,7 +43,7 @@ const factory = (eventbus) => {
     }
 
     function updateTodo(id, changedProps) {
-        const ix = state.todos.findIndex( (t) => t.id === id);
+        const ix = state.todos.findIndex( (t) => t.id ==id );
         const todo = Object.assign({}, state.todos[ix], changedProps);
         eventbus.publish('store.update', todo);
     }
